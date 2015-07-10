@@ -1,0 +1,38 @@
+<!doctype html>
+<html class="no-js" lang="en_GB">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Basic Flickr public AP / Ractive example</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/css/vendor/normalize.css">
+
+    <script src="/js/vendor/modernizr-2.8.3.min.js"></script>
+  </head>
+  <body>
+
+    <h1>Flickr Recent Photos</h1>
+
+    <p>A very basic example of accessing the Flickr public recent photos feed using Javascript and displaying the returned photos using RactiveJS</p>
+
+    <p>Type a topic / tag name in the input field, then click "update photos"</p>
+
+    <div id="photos-container"></div>
+
+    <script id="photos-template" type="text/ractive">
+      <p>Tag: <input value="{{tags}}" /> <button on-click="onUpdatePhotos">update photos</button></p>
+      
+      {{#each photos}}
+        <img src="{{media.m}}" alt="{{title}}" />
+      {{/each}}
+    </script>
+      
+    <script src="/js/vendor/jquery-1.11.2.min.js"></script>
+    <script src="/js/vendor/ractive-0.7.3.min.js"></script>
+    <script src="/js/main.js"></script>        
+
+  </body>
+</html>
